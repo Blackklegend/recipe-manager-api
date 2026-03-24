@@ -1,0 +1,94 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "${workspaceFolder}app:buildapp",
+			"script": "app:build",
+			"description": "Assembles and tests this project.",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"project": "app",
+			"buildFile": "${workspaceFolder}/app/build.gradle.kts",
+			"rootProject": "recipe-manager-api",
+			"projectFolder": "${workspaceFolder}",
+			"workspaceFolder": "${workspaceFolder}",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:build"
+		},
+		{
+			"type": "gradle",
+			"id": "${workspaceFolder}app:bootRunapp",
+			"script": "app:bootRun",
+			"description": "Runs the Spring Boot application with DevTools hot reload.",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"project": "app",
+			"buildFile": "${workspaceFolder}/app/build.gradle.kts",
+			"rootProject": "recipe-manager-api",
+			"projectFolder": "${workspaceFolder}",
+			"workspaceFolder": "${workspaceFolder}",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:bootRun",
+			"isBackground": true
+		},
+		{
+			"type": "gradle",
+			"id": "${workspaceFolder}app:cleanapp",
+			"script": "app:clean",
+			"description": "Deletes the build directory.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "${workspaceFolder}/app/build.gradle.kts",
+			"rootProject": "recipe-manager-api",
+			"projectFolder": "${workspaceFolder}",
+			"workspaceFolder": "${workspaceFolder}",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: app:clean"
+		},
+		{
+			"type": "gradle",
+			"id": "${workspaceFolder}app:classesWatchapp",
+			"script": "app:classes",
+			"description": "Continuously compiles classes on file changes.",
+			"group": "build",
+			"project": "app",
+			"buildFile": "${workspaceFolder}/app/build.gradle.kts",
+			"rootProject": "recipe-manager-api",
+			"projectFolder": "${workspaceFolder}",
+			"workspaceFolder": "${workspaceFolder}",
+			"args": "--continuous",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "Build Watch",
+			"isBackground": true
+		},
+		{
+			"label": "Dev",
+			"dependsOn": ["gradle: app:bootRun", "Build Watch"],
+			"dependsOrder": "parallel",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

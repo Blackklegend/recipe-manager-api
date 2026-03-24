@@ -1,12 +1,12 @@
 # Gradle-related
 .gradle
 build/
+bin/
 
 # Kotlin-specific
 .kotlin/
 
 # IDE and Editor files
-.vscode/
 .idea/
 *.iml
 
