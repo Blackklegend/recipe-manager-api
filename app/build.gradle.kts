@@ -24,13 +24,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-	// Kotlin dependencies
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-	// Dev tools
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-
+	// Swagger/OpenAPI
+	implementation(libs.springdoc.openapi.starter.webmvc.ui)
 	// Test dependencies
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
